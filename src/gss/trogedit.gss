@@ -1,0 +1,411 @@
+.cw-editor {
+  outline: none;
+  padding: 5px;
+  border-color: #e5e5e5;
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+}
+
+textarea.cw-edithtml {
+  outline: none;
+  width: 97.5%;
+  height: 500px;
+  font-family: monospace;
+}
+
+/*
+ * Bubble styles.
+ *
+ * @author robbyw@google.com (Robby Walker)
+ * @author nicksantos@google.com (Nick Santos)
+ * @author jparent@google.com (Julie Parent)
+ */
+
+div.tr_bubble {
+  position: absolute;
+
+  background-color: #e0ecff;
+  border: 1px solid #99c0ff;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  font-size: 83%;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 2px 19px 6px 6px;
+  white-space: nowrap;
+}
+
+.tr_bubble_link {
+  color: #00c;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 100%;
+}
+
+.tr_bubble .tr_option-link,
+.tr_bubble #tr_delete-image,
+.tr_bubble #tr_module-options-link {
+  /*font-size: 83%;*/
+}
+
+.tr_bubble_closebox {
+  position: absolute;
+  cursor: default;
+  background: url(//ssl.gstatic.com/editor/bubble_closebox.gif) top left no-repeat;
+  padding: 0;
+  margin: 0;
+  width: 10px;
+  height: 10px;
+  top: 3px;
+  right: 5px;
+}
+
+div.tr_bubble_panel {
+  padding: 2px 0 1px;
+}
+
+div.tr_bubble_panel_title {
+  display: none;
+}
+
+div.tr_multi_bubble div.tr_bubble_panel_title {
+  margin-right: 1px;
+  display: block;
+  float: left;
+  width: 50px;
+}
+
+div.tr_multi_bubble div.tr_bubble_panel {
+  padding: 2px 0 1px;
+  margin-right: 50px;
+}
+
+/*
+ * Styles for Editor dialogs and their sub-components.
+ *
+ * @author marcosalmeida@google.com (Marcos Almeida)
+ */
+
+
+.tr-dialog {
+  width: 550px;
+}
+
+/* .tr-dialog input[type=text], */
+input[type=text],
+input[type=url],
+input[type=email],
+textarea {
+  padding: 4px 6px;
+  font-size: 13px;
+  background-color: white;
+  border: 1px solid #D9D9D9;
+  border-top: 1px solid silver;
+  -webkit-user-select: text;
+}
+
+input[type=text],
+input[type=url],
+input[type=email] {
+  height: 20px;
+}
+
+.tr-dialog .goog-tab-content {
+  margin: 0;
+  border: 1px solid #6b90da;
+  padding: 4px 8px;
+  background: #fff;
+  overflow: auto;
+}
+
+.tr-tabpane {
+  /*font-size: 10pt;*/
+  padding: 1.3ex 0;
+}
+
+.tr-tabpane-caption {
+  /*font-size: 10pt;*/
+  margin-bottom: 0.7ex;
+  /*background-color: #fffaf5;*/
+  line-height: 1.3em;
+  color: #666;
+}
+
+.tr-tabpane .goog-tab-content {
+  border: none;
+  padding: 5px 7px 1px;
+}
+
+.tr-tabpane .goog-tab {
+  background-color: #fff;
+  border: none;
+  width: 136px;
+  line-height: 1.3em;
+  margin-bottom: 0.7ex;
+}
+
+.tr-tabpane .goog-tab {
+  /*text-decoration: underline;
+  color: blue;*/
+  cursor: pointer;
+}
+
+.tr-tabpane .goog-tab-selected {
+  /*font-weight: bold;
+  text-decoration: none;
+  color: black;*/
+}
+
+.tr-tabpane .goog-tab input {
+  margin: -2px 5px 0 0;
+}
+
+
+/**
+ * Styles for the Editor's Edit Link dialog.
+ *
+ * @author marcosalmeida@google.com (Marcos Almeida)
+ */
+
+
+.tr-link-dialog-explanation-text {
+  font-size: 83%;
+  margin-top: 15px;
+  color: #666;
+}
+
+.tr-link-dialog-target-input {
+  width: 98%; /* 98% prevents scroll bars in standards mode. */
+  /* Input boxes for URLs and email address should always be LTR. */
+  direction: ltr;
+}
+
+.tr-link-dialog-email-warning {
+  text-align: center;
+  color: #c00;
+  font-weight: bold;
+}
+
+.tr_pseudo-link {
+ color: #00c;
+ text-decoration: underline;
+ cursor: pointer;
+}
+
+/*
+ * Editor toolbar styles.
+ *
+ * @author attila@google.com (Attila Bodis)
+ */
+
+/* Common base style for all icons. */
+.tr-icon {
+  width: 16px;
+  height: 16px;
+  background: url(//ssl.gstatic.com/editor/editortoolbar.png) no-repeat;
+  vertical-align: middle;
+}
+
+.goog-color-menu-button-indicator .tr-icon {
+  height: 14px;
+}
+
+/* Undo (redo when the chrome is right-to-left). */
+.tr-undo,
+.goog-toolbar-button-rtl .tr-redo {
+  background-position: 0;
+}
+
+/* Redo (undo when the chrome is right-to-left). */
+.tr-redo,
+.goog-toolbar-button-rtl .tr-undo {
+  background-position: -16px;
+}
+
+/* Font name. */
+.tr-fontName .goog-toolbar-menu-button-caption {
+  color: #246;
+  width: 16ex;
+  height: 16px;
+  overflow: hidden;
+}
+
+/* Font size. */
+.tr-fontSize .goog-toolbar-menu-button-caption {
+  color: #246;
+  width: 8ex;
+  height: 16px;
+  overflow: hidden;
+}
+
+/* Bold. */
+.tr-bold {
+  background-position: -32px;
+}
+
+/* Italic. */
+.tr-italic {
+  background-position: -48px;
+}
+
+/* Underline. */
+.tr-underline {
+  background-position: -64px;
+}
+
+/* Foreground color. */
+.tr-foreColor {
+  height: 14px;
+  background-position: -80px;
+}
+
+/* Background color. */
+.tr-backColor {
+  height: 14px;
+  background-position: -96px;
+}
+
+/* Link. */
+.tr-link {
+  font-weight: bold;
+  color: #009;
+  text-decoration: underline;
+}
+
+/* Insert image. */
+.tr-image {
+  background-position: -112px;
+}
+
+/* Insert drawing. */
+.tr-newDrawing {
+  background-position: -592px;
+}
+
+/* Insert special character. */
+.tr-spChar {
+  font-weight: bold;
+  color: #900;
+}
+
+/* Increase indent. */
+.tr-indent {
+  background-position: -128px;
+}
+
+/* Increase ident in right-to-left text mode, regardless of chrome direction. */
+.tr-rtl-mode .tr-indent {
+  background-position: -400px;
+}
+
+/* Decrease indent. */
+.tr-outdent {
+  background-position: -144px;
+}
+
+/* Decrease indent in right-to-left text mode, regardless of chrome direction. */
+.tr-rtl-mode .tr-outdent {
+  background-position: -416px;
+}
+
+/* Bullet (unordered) list. */
+.tr-insertUnorderedList {
+  background-position: -160px;
+}
+
+/* Bullet list in right-to-left text mode, regardless of chrome direction. */
+.tr-rtl-mode .tr-insertUnorderedList {
+  background-position: -432px;
+}
+
+/* Number (ordered) list. */
+.tr-insertOrderedList {
+  background-position: -176px;
+}
+
+/* Number list in right-to-left text mode, regardless of chrome direction. */
+.tr-rtl-mode .tr-insertOrderedList {
+  background-position: -448px;
+}
+
+/* Text alignment buttons. */
+.tr-justifyLeft {
+  background-position: -192px;
+}
+.tr-justifyCenter {
+  background-position: -208px;
+}
+.tr-justifyRight {
+  background-position: -224px;
+}
+.tr-justifyFull {
+  background-position: -480px;
+}
+
+/* Blockquote. */
+.tr-BLOCKQUOTE {
+  background-position: -240px;
+}
+
+/* Blockquote in right-to-left text mode, regardless of chrome direction. */
+.tr-rtl-mode .tr-BLOCKQUOTE {
+  background-position: -464px;
+}
+
+/* Remove formatting. */
+.tr-removeFormat {
+  background-position: -256px;
+}
+
+/* Spellcheck. */
+.tr-spell {
+  background-position: -272px;
+}
+
+/* Left-to-right text direction. */
+.tr-ltr {
+  background-position: -288px;
+}
+
+/* Right-to-left text direction. */
+.tr-rtl {
+  background-position: -304px;
+}
+
+/* Insert iGoogle module. */
+.tr-insertModule {
+  background-position: -496px;
+}
+
+/* Strike through text */
+.tr-strikeThrough {
+  background-position: -544px;
+}
+
+/* Subscript */
+.tr-subscript {
+  background-position: -560px;
+}
+
+/* Superscript */
+.tr-superscript {
+  background-position: -576px;
+}
+
+/* Insert drawing. */
+.tr-equation {
+  background-position: -608px;
+}
+
+/* Edit HTML. */
+.tr-editHtml {
+  color: #009;
+}
+
+/* "Format block" menu. */
+.tr-formatBlock .goog-toolbar-menu-button-caption {
+  color: #246;
+  width: 12ex;
+  height: 16px;
+  overflow: hidden;
+}

@@ -1,0 +1,3 @@
+.goog-inline-block {
+  @mixin goog-block();
+}

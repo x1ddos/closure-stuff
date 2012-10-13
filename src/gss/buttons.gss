@@ -1,0 +1,146 @@
+/*
+ * CSS3 buttons
+ */
+
+@def BTN_SHADOW "0 1px 1px rgba(0,0,0,0.1)";
+@def BTN_ACTIVE_SHADOW "inset 0 1px 2px rgba(0,0,0,0.1)";
+
+.goog-button,
+.goog-css3-button,
+.modal-dialog-buttons button {
+  @mixin goog-block();
+  margin: 0 1em 0 0;
+  padding: 8px 10px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: default;
+  outline: none;
+  font: inherit;
+  font-family: arial, sans-serif;
+  font-size: .9em;
+  font-weight: bold;
+  line-height: normal;
+  color: #444;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  @mixin appearance(none);
+  @mixin gradient(top, #f5f5f5, #f1f1f1);
+}
+
+/* Remove excess padding and border in FF3+ */
+.goog-css3-button::-moz-focus-inner,
+.goog-button::-moz-focus-inner,
+.modal-dialog-buttons button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+    outline: 0;
+}
+
+.goog-css3-button:hover,
+.goog-css3-button:focus,
+.goog-css3-button:active,
+.goog-css3-button-hover,
+.goog-css3-button-focused,
+.goog-css3-button-active,
+.goog-css3-button-open,
+.goog-button-hover,
+.goog-button-active,
+.modal-dialog-buttons button:hover,
+.modal-dialog-buttons button:focus,
+.modal-dialog-buttons button:active {
+  border-color: #c6c6c6; 
+  color: #222;
+  box-shadow: BTN_SHADOW;
+  @mixin gradient(top, #f8f8f8, #f1f1f1);
+}
+
+.goog-css3-button-focused,
+.goog-css3-button:focus,
+.goog-button-hover,
+.modal-dialog-buttons button:focus {
+  border-color: #2E92CC; /* $link-color */
+  outline: 0;
+}
+
+.goog-css3-button-active,
+.goog-css3-button:active,
+.goog-button-active,
+.modal-dialog-buttons button:active {
+  box-shadow: BTN_ACTIVE_SHADOW;
+  @mixin gradient(top, #eee, #e8e8e8);
+}
+
+.goog-css3-button-primary
+.goog-css3-button.main,
+.goog-css3-button.blue,
+.goog-buttonset-default,
+button[name=ok] {
+  color: #2c9eeb;
+}
+
+.goog-css3-button-primary:hover,
+.goog-css3-button.main:hover,
+.goog-css3-button.blue:hover,
+.goog-buttonset-default:hover,
+button[name=ok]:hover {
+  color: #148adb;
+}
+
+.goog-css3-button.black {
+  color: #222;
+}
+.goog-css3-button.danger,
+.goog-css3-button.red {
+  color: #cc0000;
+}
+
+.goog-css3-button.disabled,
+.goog-css3-button-disabled,
+.goog-button-disabled,
+button[disabled],
+button[disabled]:hover,
+button[disabled]:focus,
+button[disabled]:active {
+  color: #888 !important;
+  box-shadow: none;
+  border: 1px solid #d9d9d9;
+}
+
+
+/*
+ * Pill (collapsed border) styles.
+ */
+
+.goog-css3-button-collapse-right {
+  margin-right: 0 !important;
+  border-right: 1px solid #bbb;
+  @mixin collapse-right();
+}
+
+.goog-css3-button-collapse-left {
+  border-left: 1px solid #f9f9f9;
+  margin-left: 0 !important;
+  @mixin collapse-left();
+}
+
+/*
+ * Styling for link buttons created by goog.ui.LinkButtonRenderer.
+ *
+ * @author robbyw@google.com (Robby Walker)
+ */
+
+.goog-link-button {
+  position: relative;
+  color: #00f;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* State: disabled. */
+.goog-link-button-disabled {
+  color: #888;
+  text-decoration: none;
+  cursor: default;
+}

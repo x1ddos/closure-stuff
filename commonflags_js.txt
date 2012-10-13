@@ -1,0 +1,6 @@
+--define=goog.DEBUG=false
+--warning_level=VERBOSE
+--summary_detail_level=3
+--compilation_level=ADVANCED_OPTIMIZATIONS
+--jscomp_error=checkTypes
+--source_map_format=V3

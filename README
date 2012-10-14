@@ -1,0 +1,7 @@
+Additions used in some internal and public projects.
+
+== Some demos ==
+
+  * HTML editor based on TrogEdit, with some default plugins, Drive Picker
+    and raw HTML editing. 
+    http://crhym3-closure-stuff.googlecode.com/git/demos/htmleditor.html

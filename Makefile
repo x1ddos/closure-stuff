@@ -46,10 +46,11 @@ css_htmleditor: _ensure_build_dir
 		$(SRC_DIR)/gss/trogedit.gss \
 		> $(BUILD_DIR)/nodeps.htmleditor.min.css
 
-jsdeps_for_demos:
-	$(JS_DEPSWRITER) --root_with_prefix="$(SRC_DIR) ../src/" > demos/deps.js
+deps:
+	$(JS_DEPSWRITER) \
+		--root_with_prefix="$(SRC_DIR) ../../../src" > src/cw/deps.js
 
-serve_demos:
+s serve_demos:
 	python -m SimpleHTTPServer
 
 _ensure_build_dir:

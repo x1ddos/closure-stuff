@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<!--
+Copyright 2012 Cloudware Srl. All Rights Reserved.
+
+Use of this source code is governed by the Apache License, Version 2.0.
+See the COPYING file for details.
+-->
+<!--
+-->
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Closure Unit Tests - cw.style.animation</title>
+<script src="/google/closure/goog/base.js"></script>
+<script src="../deps.js"></script>
+<script>
+  goog.require('cw.style.animation');
+  goog.require('goog.testing.jsunit');
+  goog.require('goog.userAgent');
+</script>
+</head>
+<body>
+<script>
+
+/** Fake element. */
+var element;
+
+
+function setUp() {
+  element = {'style': {}};
+}
+
+
+function testSetWithNoProperty() {
+  try {
+    cw.style.animation.set(element, []);
+  } catch (e) {
+    return;
+  }
+  fail('Should fail when no property is given.');
+}
+
+
+function testSetWithString() {
+  cw.style.animation.set(element, 'test 1s ease-in 0.125s');
+  assertEquals('test 1s ease-in 0.125s', element.style.WebkitAnimation);
+  assertEquals('test 1s ease-in 0.125s', element.style.MozAnimation);
+  assertEquals('test 1s ease-in 0.125s', element.style.OAnimation);
+}
+
+
+function testSetWithSingleProperty() {
+  cw.style.animation.set(element,
+      {name: 'test', duration: 1, timing: 'ease-in', delay: 0.125});
+  assertEquals(
+    'test 1s ease-in 0.125s infinite normal',
+    element.style.WebkitAnimation);
+  assertEquals(
+    'test 1s ease-in 0.125s infinite normal',
+    element.style.MozAnimation);
+  assertEquals(
+    'test 1s ease-in 0.125s infinite normal',
+    element.style.OAnimation);
+}
+
+
+function testSetWithMultipleStrings() {
+  cw.style.animation.set(element, [
+    'test1 1s ease-in',
+    'test2 0.5s linear 1s'
+  ]);
+  assertEquals('test1 1s ease-in,test2 0.5s linear 1s',
+      element.style.WebkitAnimation);
+  assertEquals('test1 1s ease-in,test2 0.5s linear 1s',
+      element.style.MozAnimation);
+  assertEquals('test1 1s ease-in,test2 0.5s linear 1s',
+      element.style.OAnimation);
+}
+
+
+function testSetWithMultipleProperty() {
+  cw.style.animation.set(element, [
+    {name: 'test1', duration: 1, timing: 'ease-in', delay: 0},
+    {name: 'test2', duration: 0.5, timing: 'linear', delay: 1}
+  ]);
+  assertEquals(
+    'test1 1s ease-in 0s infinite normal,test2 0.5s linear 1s infinite normal',
+    element.style.WebkitAnimation);
+  assertEquals(
+    'test1 1s ease-in 0s infinite normal,test2 0.5s linear 1s infinite normal',
+    element.style.MozAnimation);
+  assertEquals(
+    'test1 1s ease-in 0s infinite normal,test2 0.5s linear 1s infinite normal',
+    element.style.OAnimation);
+}
+
+
+function testRemoveAllForWebkit() {
+  element.style.WebkitAnimation = 'test 1s ease-in';
+  cw.style.animation.removeAll(element);
+  assertEquals('', element.style.WebkitAnimation);
+}
+
+
+function testRemoveAllForGecko() {
+  element.style.MozAnimation = 'test 1s ease-in';
+  cw.style.animation.removeAll(element);
+  assertEquals('', element.style.MozAnimation);
+}
+
+
+function testRemoveAllForIE() {
+  element.style.MSAnimation = 'test 1s ease-in';
+  cw.style.animation.removeAll(element);
+  assertEquals('', element.style.MSAnimation);
+}
+
+
+function testRemoveAllForOpera() {
+  element.style.OAnimation = 'test 1s ease-in';
+  cw.style.animation.removeAll(element);
+  assertEquals('', element.style.OAnimation);
+}
+
+
+function testRemoveAllForUnprefixed() {
+  element.style.animation = 'test 1s ease-in';
+  cw.style.animation.removeAll(element);
+  assertEquals('', element.style.animation);
+}
+
+
+function testSanityDetectionOfCss3Transition() {
+  var support = cw.style.animation.isSupported();
+
+  // IE support starts at IE10.
+  if (goog.userAgent.IE) {
+    assertEquals(goog.userAgent.isVersion('10.0'), support);
+  }
+
+  // FF support start at FF4 (Gecko 2.0)
+  if (goog.userAgent.GECKO) {
+    assertEquals(goog.userAgent.isVersion('2.0'), support);
+  }
+
+  // Webkit support has existed for a long time, we assume support on
+  // most webkit version in used today.
+  if (goog.userAgent.WEBKIT) {
+    assertTrue(support);
+  }
+}
+
+</script>
+
+</body>
+</html>

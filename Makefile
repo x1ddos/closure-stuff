@@ -48,7 +48,7 @@ css_htmleditor: _ensure_build_dir
 
 deps:
 	$(JS_DEPSWRITER) \
-		--root_with_prefix="$(SRC_DIR) ../../../src" > src/cw/deps.js
+		--root="$(SRC_DIR)" > src/deps.js
 
 s serve_demos:
 	python -m SimpleHTTPServer

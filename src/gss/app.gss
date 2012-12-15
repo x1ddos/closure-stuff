@@ -1,0 +1,203 @@
+.container:before, .container:after { 
+  content: ""; 
+  display: table; 
+}
+.container:after {
+  clear: both;
+}
+.container {
+  position: relative;
+}
+
+header {
+  margin-top: .5em;
+  position: relative;
+}
+
+header, footer, .container { 
+  *zoom: 1; 
+  max-width: 960px;
+  _width: 960px;
+  margin: 0 auto;
+}
+
+header nav {
+  position: absolute; 
+  left: 160px; 
+  top: 80px;
+}
+
+.app-title {
+  font-size: 46px;
+  color: #6D6E70;
+}
+
+h2 {
+  margin: 1.3em 0 .7em 0;
+}
+
+ul.icons li img {
+  padding: 3px;
+  background-color: white;
+  border: 1px solid #efefef;
+}
+
+.actions {
+  margin-top: 1em;
+  padding-top: 10px;
+  border-top: 1px dotted #E4ECF3;
+}
+
+.label {
+  padding: 3px 7px;
+  border-radius: 5px;
+  background-color: #00AEEF;
+  color: white;
+  display: inline-block;
+}
+
+.bordered-sep {
+  margin-top: 2em;
+  padding-top: 5px;
+  border-top: 1px solid BORDER_COLOR;
+}
+
+#lang {
+  font-size: 80%;
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+
+/*------------------ some typo styles */
+
+a, a:visited, a:hover, a:focus, .blue, h1 { 
+  color: #00AEEF;
+}
+a, a:visited { 
+  text-decoration: none;
+}
+a:hover, a:focus {
+  text-decoration: underline;
+}
+header a:hover, header a:focus {
+  text-decoration: none;
+}
+a.imglink {
+  text-decoration: none !important;
+}
+
+.highlight { 
+  color: #979A02;
+}
+
+.bigger {
+  font-size: 120%;
+}
+.bottom {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+nav ul li, ul.inline li {
+  display: inline;
+}
+nav .current {
+  color: #00AEEF;
+  border-bottom: 1px dotted #00AEEF;
+}
+
+ul.bull {
+  color: #aaa;
+}
+
+ul.bull li:after {
+  content: "\a0\a0\2022\a0";
+}
+ul.bull li:last-child:after {
+  content: "";
+}
+
+
+img.avatar {
+  padding: 0;
+  border: 1px solid #aaa;
+  box-shadow: 0 0 5px #ccc;
+}
+
+
+/*------------------- footer */
+
+footer {
+  padding: 5px 0 10px 0;
+  border-top: 1px solid #E4ECF3;
+  color: #72D2FF;
+  font-size: 80%;
+}
+footer nav {
+  text-align: right;
+}
+footer nav:after {
+  clear: both;
+}
+
+/**
+ * Media queries
+ */
+
+@media only screen and (max-width: 980px) {
+  .container[role=main], footer {
+    /*padding: 0 5px !important;*/
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+
+@media only screen and (max-width: 720px) {
+  header {
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 5px;
+    margin-top: 0;
+  }
+  #cwlogo {
+    height: 50px;
+    float: left;
+    margin-right: 1em;
+  }
+  #cwlabel {
+    display: none;
+  }
+  #mainnav {
+    display: none;
+  }
+  #lang {
+    position: static;
+    padding: 0;
+    margin: 20px 0 0 0;
+  }
+}
+
+/* Style adjustments for viewports 300px and less go here */
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 140%;
+    margin-top: .3em;
+    line-height: 1.3em;
+  }
+  
+  .m-smaller {
+    font-size: 80%;
+  }
+}
+
+
+/* Style adjustments for viewports 480px and over go here */
+/*@media only screen and (min-width: 480px) {
+}
+*/
+
+/* Style adjustments for viewports 768px and over go here */
+/*@media only screen and (min-width: 768px) {
+}
+*/
+

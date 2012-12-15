@@ -50,9 +50,10 @@
 .modal-dialog-buttons button:hover,
 .modal-dialog-buttons button:focus,
 .modal-dialog-buttons button:active {
-  border-color: #c6c6c6; 
+  border-color: #c6c6c6;
   color: #222;
   box-shadow: BTN_SHADOW;
+  text-decoration: none;
   @mixin gradient(top, #f8f8f8, #f1f1f1);
 }
 
@@ -72,7 +73,7 @@
   @mixin gradient(top, #eee, #e8e8e8);
 }
 
-.goog-css3-button-primary
+.goog-css3-button-primary,
 .goog-css3-button.main,
 .goog-css3-button.blue,
 .goog-buttonset-default,

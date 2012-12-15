@@ -156,9 +156,9 @@ cw.editor.plugins.DrivePicker.prototype.createPicker = function() {
     google.picker.WebCamViewType.STANDARD);
 
   return new google.picker.PickerBuilder().
-    addViewGroup(gdocs).
-    addViewGroup(picasa).
-    addView(webcam).
+    addView(google.picker.ViewId.PHOTO_UPLOAD).
+    //addView(google.picker.ViewId.PHOTO_ALBUMS).
+    addView(google.picker.ViewId.PHOTOS).
     addView(google.picker.ViewId.RECENTLY_PICKED).
     addView(google.picker.ViewId.IMAGE_SEARCH).
     setCallback(goog.bind(this.handlePickerHide_, this)).

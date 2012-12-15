@@ -128,7 +128,7 @@ google.picker.Action.CANCEL;
 
 /** @constructor */
 google.picker.PickerBuilder = function(){};
-/** @param {google.picker.View} v */
+/** @param {google.picker.View|google.picker.ViewId} v */
 google.picker.PickerBuilder.prototype.addView = function(v){}
 /** @param {google.picker.ViewGroup} g */
 google.picker.PickerBuilder.prototype.addViewGroup = function(g){}
